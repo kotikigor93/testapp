@@ -1,0 +1,30 @@
+body{
+    background: #fff;
+}
+
+.main_body .title_color{
+    color: darkred;
+}
+
+.hidden{
+    display: none;
+}
+
+.main_body{
+    margin-top: 25px;
+}
+
+.registration{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.filter_form{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
