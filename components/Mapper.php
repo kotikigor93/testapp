@@ -7,7 +7,6 @@
 
 namespace components;
 
-
 abstract class Mapper
 {
     protected $titleMap = [];

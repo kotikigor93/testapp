@@ -11,15 +11,19 @@ use components\ExpandetModel;
 
 class Registration extends ExpandetModel
 {
+    /**
+     * @param $params
+     * @return array
+     */
     public function registrationUser($params):array
     {
         $user = new Users();
         $user
-            ->setUsername($_POST['username'])
-            ->setPassword(md5($_POST['password']))
-            ->setEmail($_POST['email'])
-            ->setFirstname($_POST['firstname'])
-            ->setLastname($_POST['lastname']);
+            ->setUsername($params['username'])
+            ->setPassword($params['password'])
+            ->setEmail($params['email'])
+            ->setFirstname($params['firstname'])
+            ->setLastname($params['lastname']);
         return $user->save();
     }
 }

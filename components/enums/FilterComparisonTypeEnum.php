@@ -7,7 +7,6 @@
 
 namespace components\enums;
 
-
 class FilterComparisonTypeEnum
 {
     const EQUAL = 1;

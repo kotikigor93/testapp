@@ -25,7 +25,7 @@ class NotificationService
      * @param $dateCreated
      * @return bool
      */
-    public function save($type, $userId, $dateCreated)
+    public function save($type, $userId, $dateCreated):bool
     {
         return $this
             ->notification

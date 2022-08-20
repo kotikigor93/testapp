@@ -12,7 +12,7 @@ require_once 'view/header.php';
     <div class="container">
         <div class="row">
             <div class="col-6">
-                <h3>Авторизация</h3>
+                <h3><?= $data['view_title'] ?></h3>
                 <form action="checklogin" id="login">
                     <div class="alert alert-danger p- hidden" id="login_error">Проверте логин и пароль!</div>
                     <label for="login">Логин</label>

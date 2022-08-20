@@ -13,7 +13,7 @@ class FilterFactory
 {
     /**
      * @param string $filterName
-     * @return array
+     * @return Filter
      */
     public function create(string $filterName = ''):Filter
     {

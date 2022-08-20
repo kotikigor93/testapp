@@ -18,7 +18,6 @@ class LoginController extends Controller
         if($_SESSION['user_id']){
             SRC::redirect('index');
         }
-
         $data = [
             'view_title' => 'Авторизация',
         ];

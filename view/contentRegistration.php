@@ -12,7 +12,7 @@ require_once 'view/header.php';
     <div class="container">
         <div class="row">
             <div class="col-6">
-                <h3>Регистрация</h3>
+                <h3><?= $data['view_title'] ?></h3>
                 <form action="registrationuser" id="registration">
                     <label for="username">Логин</label>
                     <input type="text" name="username" id="username" placeholder="Введите логин" class="form-control mb-2" required>

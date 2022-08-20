@@ -9,7 +9,6 @@ namespace app\models;
 
 use components\enums\NotificationTypeEnum;
 use components\ExpandetModel;
-use components\services\Notification;
 use components\services\NotificationService;
 
 class Login extends ExpandetModel

@@ -11,7 +11,6 @@ use app\middleware\Middleware;
 use app\models\Statistic;
 use app\models\Users;
 use components\Controller;
-use components\enums\FilterComparisonTypeEnum;
 use components\mappers\NotificationTypeMapper;
 use components\Pagnation;
 use components\SRC;

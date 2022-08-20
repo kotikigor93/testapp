@@ -12,7 +12,7 @@ require_once 'view/header.php';
     <div class="container">
         <div class="row">
             <div class="col-12 mt-2">
-                <h3>Статистика</h3>
+                <h3><?= $data['view_title'] ?></h3>
                 <form action="" id="fiter" class="filter_form">
                     <div class="col-3">
                         <label for="filter_user" class="mb-2">Пользователь: </label>

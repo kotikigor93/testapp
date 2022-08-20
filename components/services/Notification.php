@@ -77,7 +77,10 @@ class Notification extends ExpandetModel
             ->getTableRows();
     }
 
-    public function save()
+    /**
+     * @return bool
+     */
+    public function save():bool
     {
         $this->setInsertData([
             'type' => $this->type,

@@ -12,7 +12,7 @@ require_once 'view/header.php';
     <div class="container">
         <div class="row">
             <div class="col-6 mt-2">
-                <h3>Карточка пользователя</h3>
+                <h3><?= $data['view_title'] ?></h3>
                 <div><b>Логин:</b> <?= $data['user']['username'] ?></div>
                 <div><b>Имя:</b> <?= $data['user']['firstname'] ?></div>
                 <div><b>Фамилия:</b> <?= $data['user']['lastname'] ?></div>

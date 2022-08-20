@@ -85,4 +85,27 @@ class SRC
         }
         return $result;
     }
+
+    /**
+     * @param array $data
+     * @param string $groupColumnTitle
+     * @return array
+     */
+    public static function groupArrayByColumnKeepSorting(
+        array  $data,
+        string $groupColumnTitle = 'id'
+    ): array
+    {
+        $result = [];
+        foreach ($data as $id => $row) {
+            if (array_key_exists($groupColumnTitle, $row)) {
+                $result[$row[$groupColumnTitle]][$id] = $row;
+            }
+        }
+        foreach ($result as &$sortedByKeys) {
+            ksort($sortedByKeys);
+            $sortedByKeys = array_values($sortedByKeys);
+        }
+        return $result;
+    }
 }

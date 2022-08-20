@@ -167,7 +167,7 @@ class Users extends ExpandetModel
     }
 
     /**
-     * @return string[]
+     * @return array
      */
     public function save(): array
     {

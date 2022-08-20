@@ -21,6 +21,7 @@ class Statistic extends ExpandetModel
     }
 
     /**
+     * @param array $params
      * @return array
      */
     public function findListByFilterParams(array $params = []):array

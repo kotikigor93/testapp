@@ -15,4 +15,7 @@ $routes = [
     'singin' => 'login/singin',
     'logout' => 'login/logout',
     'statistics/([0-9]+)' => 'statistic/statistic/$1',
+    'page/([0-9]+)' => 'page/page/$1',
+    'click_btn' => 'page/clickbutton',
+    'reports' => 'report/report',
 ];

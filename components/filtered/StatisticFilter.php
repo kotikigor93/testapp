@@ -1,15 +1,14 @@
 <?php
-
-namespace components\filtered;
-
-use components\enums\FilterComparisonTypeEnum;
-use components\Filter;
-
 /**
  * Created by Kotyk Ihor
  * Date : 19.08.2022
  * Time : 5:02
  */
+
+namespace components\filtered;
+
+use components\enums\FilterComparisonTypeEnum;
+use components\Filter;
 
 class StatisticFilter extends Filter
 {

@@ -16,7 +16,6 @@
                     id: $(this).data('id')
                 },
                 success(response) {
-                    console.log(response);
                     let result = $.parseJSON(response);
                     if(result.result){
                         window.location.reload();

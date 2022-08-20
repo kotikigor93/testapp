@@ -38,10 +38,10 @@ use components\SRC;
                     <a class="nav-link" href="/index">Профиль</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/page_a">Страница А</a>
+                    <a class="nav-link" href="/page/1">Страница А</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/page_b">Страница В</a>
+                    <a class="nav-link" href="/page/2">Страница В</a>
                 </li>
                 <? if(SRC::isAdmin($_SESSION['user_id'])){ ?>
                 <li class="nav-item">

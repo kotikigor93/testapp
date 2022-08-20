@@ -69,6 +69,11 @@ abstract class ExpandetModel
     protected $offset = 0;
 
     /**
+     * @var string
+     */
+    protected $union = '';
+
+    /**
      * @var DB
      */
     protected $dbConect;
@@ -157,7 +162,6 @@ abstract class ExpandetModel
         return $this;
     }
 
-
     /**
      * @return array
      */
@@ -187,8 +191,6 @@ abstract class ExpandetModel
         $result->setFetchMode(PDO::FETCH_ASSOC);
         return $result->fetchAll();
     }
-
-
 
     /**
      * @return int
@@ -231,6 +233,10 @@ abstract class ExpandetModel
         return $result->fetchAll();
     }
 
+    /**
+     * @param array $params
+     * @return array
+     */
     protected function findTableRowByFilterParams(array $params = []):array
     {
         $filterFactory = new FilterFactory();
@@ -256,6 +262,47 @@ abstract class ExpandetModel
         $result = $this->dbConect->query('SELECT * FROM '. $this->mainTable.$where .' ORDER BY '. $this->orderBy .' '. $this->sort. $limit . $offset);
         $result->setFetchMode(PDO::FETCH_ASSOC);
         return $result->fetchAll();
+    }
 
+    /**
+     * @return array
+     */
+    protected function findTableRowsByUnion():array
+    {
+        $result = $this->dbConect->query($this->union.' ORDER BY '. $this->orderBy .' '. $this->sort. $limit . $offset);
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        return $result->fetchAll();
+    }
+
+    /**
+     * @param string $selectList
+     * @param array $whereList
+     * @param string $groupByList
+     * @return $this
+     */
+    public function addUnionRow(string $selectList = '', array $whereList = [], string $groupByList = ''):ExpandetModel
+    {
+        $this->union .=
+            $this->union
+                ? ' UNION SELECT '.$selectList
+                : 'SELECT '.$selectList;
+        $this->union .= ' FROM '.$this->mainTable;
+
+        $comparisonMapper = new FilterComparisonTypeMapper();
+        $comparisonList = $comparisonMapper->getTitleList();
+        $this->where = '';
+
+        foreach ($whereList as $item){
+            $this->where .= $this->where ? ' AND ' : ' ';
+            SRC::isNumeric($item['value'])
+                ? $this->where .= $item['name'] . $comparisonList[$item['comparison']]. $item['value']
+                : $this->where .= $item['name'] . $comparisonList[$item['comparison']]. '"'. $item['value'] .'"';
+        }
+        $where = $this->where ? ' WHERE '. $this->where : '';
+
+        $this->union .= $where;
+        $this->union .= ' GROUP BY '.$groupByList;
+
+        return $this;
     }
 }
