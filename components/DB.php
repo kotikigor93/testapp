@@ -13,10 +13,10 @@ class DB extends \PDO
      * @var array|string[]
      */
     private array $config = [
-        'host' => 'localhost',
-        'user' => 'root',
-        'pass' => 'root',
-        'table' => 'testapp',
+        'host' => 'proliski.mysql.tools',
+        'user' => 'proliski_testapp',
+        'pass' => '_ug8Gi68J(',
+        'table' => 'proliski_testapp',
     ];
 
     public function __construct()

@@ -13,7 +13,7 @@ abstract class Controller
      * @param string $filename
      * @param array $data
      */
-    protected function viewLoad(string $filename = 'index', array $data = [])
+    protected function viewLoad(string $filename, array $data = [])
     {
         SRC::template($filename, $data);
     }

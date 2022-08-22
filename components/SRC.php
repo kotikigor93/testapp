@@ -18,7 +18,7 @@ class SRC
      */
     public static function template(string $filename = 'error', array $data = [])
     {
-        file_exists(ROOT . '/view/content' . $filename . '.php') ? require_once ROOT . '/view/content' . $filename . '.php' : require_once ROOT . '/view/contentIndex.php';
+        file_exists(ROOT . '/view/content' . ucfirst($filename) . '.php') ? require_once ROOT . '/view/content' . ucfirst($filename) . '.php' : require_once ROOT . '/view/contentIndex.php';
     }
 
     /**

@@ -16,7 +16,7 @@ class LoginController extends Controller
     public function actionLogin()
     {
         if($_SESSION['user_id']){
-            SRC::redirect('index');
+            SRC::redirect('/index');
         }
         $data = [
             'view_title' => 'Авторизация',
